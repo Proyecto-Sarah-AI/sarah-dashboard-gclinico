@@ -1,0 +1,74 @@
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.dashboard-main {
+  flex: 1;
+  margin-left: 260px;
+  background: var(--background);
+}
+
+.dashboard-content {
+  padding: 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* KPI Section */
+.kpi-section {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 1400px) {
+  .kpi-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .kpi-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Charts Section */
+.charts-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 1200px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.charts-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 1200px) {
+  .charts-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Responsive Sidebar */
+@media (max-width: 768px) {
+  .dashboard-main {
+    margin-left: 0;
+  }
+}
