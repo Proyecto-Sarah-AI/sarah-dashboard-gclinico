@@ -15,7 +15,8 @@ import {/*
   ParticipationChart,
   AlertsDistributionChart,
   AppointmentsChart,*/
-  AdherenceHistogramChart,
+  PharmacologicalAdherenceHistogramChart,
+  CareAdherenceHistogramChart,
   IMCVariationHistogramChart,
   ParticipationsByMonthChart,
 } from './charts/Charts';
@@ -142,10 +143,17 @@ export function Dashboard() {
               }
 
               <ChartCard
-                title="Distribucion de Adherencia"
-                subtitle="Cantidad de pacientes por nivel de adherencia"
+                title="Adherencia Farmacologica"
+                subtitle="Porcentaje de dosis tomadas"
               >
-                <AdherenceHistogramChart />
+                <PharmacologicalAdherenceHistogramChart />
+              </ChartCard>
+
+              <ChartCard
+                title="Adherencia del Cuidado"
+                subtitle="Porcentaje de citas asistidas"
+              >
+                <CareAdherenceHistogramChart />
               </ChartCard>
 
               <ChartCard
