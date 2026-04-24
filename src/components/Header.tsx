@@ -19,17 +19,7 @@ export function Header({ title, subtitle }: HeaderProps) {
       </div>
 
       <div className="header-right">
-        {/*
-        <div className="search-box">
-          <Search size={18} className="search-icon" />
-          <input
-            type="text"
-            placeholder="Buscar pacientes, metricas..."
-            className="search-input"
-          />
-        </div>*/}
-
-        <div className="header-actions">
+          <div className="header-actions">
           <div className="date-filter">
             <Calendar size={16} />
             <span>Ultimos 30 dias</span>
