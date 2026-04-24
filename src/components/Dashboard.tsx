@@ -1,26 +1,19 @@
-import {/*
-  Activity,
-  TrendingDown,
-  MessageSquare,
-  CalendarCheck,*/
+import {
   Users,
 } from 'lucide-react';
 import { Sidebar } from './Sidebar';
 import { Header } from './Header';
 import { KPICard } from './kpi/KPICard';
 import { ChartCard } from './charts/ChartCard';
-import {/*
-  AdherenceChart,
-  IMCComparisonChart,
-  ParticipationChart,
-  AlertsDistributionChart,
-  AppointmentsChart,*/
+import {
   PharmacologicalAdherenceHistogramChart,
   CareAdherenceHistogramChart,
   IMCVariationHistogramChart,
   ParticipationsByMonthChart,
 } from './charts/Charts';
 import './Dashboard.css';
+import { Button } from '@base-ui/react/button';
+import { downloadDashboardexcel } from './utility/excelService';
 
 export function Dashboard() {
   return (
@@ -35,46 +28,6 @@ export function Dashboard() {
         <div className="dashboard-content">
           {/* KPI Cards */}
           <section className="kpi-section">
-            {/*
-
-              <KPICard
-              title="Adherencia Promedio"
-              value="82.5%"
-              change={4.2}
-              changeLabel="vs mes anterior"
-              icon={<Activity size={20} />}
-              trend="up"
-              status="success"
-              />
-            
-            <KPICard
-              title="IMC Promedio"
-              value="29.8"
-              change={-3.1}
-              changeLabel="vs inicio"
-              icon={<TrendingDown size={20} />}
-              trend="up"
-              status="success"
-            />
-            <KPICard
-              title="Participacion Diaria"
-              value="156"
-              change={12}
-              changeLabel="interacciones/dia"
-              icon={<MessageSquare size={20} />}
-              trend="up"
-              status="info"
-            />
-            <KPICard
-              title="Cumplimiento Citas"
-              value="94%"
-              change={6}
-              changeLabel="vs mes anterior"
-              icon={<CalendarCheck size={20} />}
-              trend="up"
-              status="success"
-            />*/
-            }
             <KPICard
               title="Pacientes Activos"
               value="200"
@@ -84,64 +37,16 @@ export function Dashboard() {
               trend="up"
               status="info"
             />
+                        
+            <Button className="export-button" onClick={downloadDashboardexcel}>
+              Exportar datos
+            </Button>
+
           </section>
 
           {/* Charts Grid */}
-          <section className="charts-section">
-            {/*<div className="charts-grid">
-              
-
-              
-              <ChartCard
-                title="Nivel de Adherencia"
-                subtitle="Adherencia diaria y acumulada vs objetivo"
-              >
-                <div className="chart-legend">
-                  <div className="legend-item">
-                    <span className="legend-dot legend-dot--primary"></span>
-                    <span>Adherencia</span>
-                  </div>
-                  <div className="legend-item">
-                    <span className="legend-dot legend-dot--secondary"></span>
-                    <span>Objetivo (80%)</span>
-                  </div>
-                </div>
-                <AdherenceChart />
-              </ChartCard>
-
-              <ChartCard
-                title="Evolucion del IMC"
-                subtitle="Comparacion: Grupo Sarah vs Grupo Control"
-              >
-                <IMCComparisonChart />
-              </ChartCard>
-
-              <ChartCard
-                title="Nivel de Participacion"
-                subtitle="Interacciones semanales con Sarah"
-              >
-                <ParticipationChart />
-              </ChartCard>
-
-              <ChartCard
-                title="Distribucion de Alertas"
-                subtitle="Clasificacion por nivel de riesgo"
-              >
-                <AlertsDistributionChart />
-              </ChartCard>
-            </div>
-              */}
-
+          <section className="charts-section">            
             <div className="charts-row">
-              {/*
-                <ChartCard
-                title="Cumplimiento de Citas"
-                subtitle="Citas programadas vs cumplidas"
-                >
-                <AppointmentsChart />
-              </ChartCard>*/
-              }
-
               <ChartCard
                 title="Adherencia Farmacologica"
                 subtitle="Porcentaje de dosis tomadas"
