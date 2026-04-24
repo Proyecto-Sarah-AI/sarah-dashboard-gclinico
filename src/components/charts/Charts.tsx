@@ -65,13 +65,20 @@ const appointmentsData = [
   { month: 'Jun', cumplidas: 97, programadas: 100 },
 ];
 
-// Datos de Histograma de Adherencia
-const adherenceHistogramData = [
-  { range: '0-20%', pacientes: 10 },
-  { range: '20-40%', pacientes: 25 },
-  { range: '40-60%', pacientes: 65 },
-  { range: '60-80%', pacientes: 50 },
-  { range: '80-100%', pacientes: 20 },
+// Datos de Histograma de Adherencia farmacologica
+const pharmacologicalAdherenceData = [
+  { month: 'Ene', percentage: 48 },
+  { month: 'Feb', percentage: 63 },
+  { month: 'Mar', percentage: 74 },
+  { month: 'Abr', percentage: 83 },
+  { month: 'May', percentage: 42 },
+  { month: 'Jun', percentage: 55 },
+  { month: 'Jul', percentage: 68 },
+  { month: 'Ago', percentage: 47 },
+  { month: 'Sep', percentage: 19 },
+  { month: 'Oct', percentage: 46 },
+  { month: 'Nov', percentage: 78 },
+  { month: 'Dic', percentage: 36 }
 ];
 
 // Datos de Histograma de Variacion IMC
@@ -93,6 +100,21 @@ const participationsByMonthData = [
   { month: 'May', participaciones: 1600 },
   { month: 'Jun', participaciones: 1500 },
 ];
+
+const  CareAdherenceData = [
+  { month: 'Ene', percentage: 46 },
+  { month: 'Feb', percentage: 72 },
+  { month: 'Mar', percentage: 15 },
+  { month: 'Abr', percentage: 76 },
+  { month: 'May', percentage: 93 },
+  { month: 'Jun', percentage: 43 },
+  { month: 'Jul', percentage: 41 },
+  { month: 'Ago', percentage: 26 },
+  { month: 'Sep', percentage: 24 },
+  { month: 'Oct', percentage: 46 },
+  { month: 'Nov', percentage: 48 },
+  { month: 'Dic', percentage: 67 }
+]
 
 const tooltipStyle = {
   backgroundColor: '#18181f',
@@ -243,16 +265,30 @@ export function AppointmentsChart() {
   );
 }
 
-export function AdherenceHistogramChart() {
+export function PharmacologicalAdherenceHistogramChart() {
   return (
     <ResponsiveContainer width="100%" height={220}>
-      <BarChart data={adherenceHistogramData} barGap={0}>
+      <LineChart data={pharmacologicalAdherenceData} barGap={0}>
         <CartesianGrid strokeDasharray="3 3" stroke="#2a2a35" vertical={false} />
-        <XAxis dataKey="range" stroke="#71717a" fontSize={12} tickLine={false} axisLine={false} />
-        <YAxis stroke="#71717a" fontSize={12} tickLine={false} axisLine={false} />
+        <XAxis dataKey="month" stroke="#71717a" fontSize={12} tickLine={false} axisLine={false} />
+        <YAxis stroke="#71717a" fontSize={12} tickLine={false} axisLine={false} domain={[0, 100]} tickFormatter={(value) => value + '%'} />
         <Tooltip contentStyle={tooltipStyle} />
-        <Bar dataKey="pacientes" fill="#3b82f6" radius={[4, 4, 0, 0]} name="Pacientes" />
-      </BarChart>
+        <Line type="monotone" dataKey="percentage" name="Adherencia" stroke="#3b82f6" strokeWidth={2} dot={{ r: 4, fill: '#3b82f6' }}/>
+      </LineChart>
+    </ResponsiveContainer>
+  );
+}
+
+export function CareAdherenceHistogramChart() {
+  return (
+    <ResponsiveContainer width="100%" height={220}>
+      <LineChart data={CareAdherenceData} barGap={0}>
+        <CartesianGrid strokeDasharray="3 3" stroke="#2a2a35" vertical={false} />
+        <XAxis dataKey="month" stroke="#71717a" fontSize={12} tickLine={false} axisLine={false} />
+        <YAxis stroke="#71717a" fontSize={12} tickLine={false} axisLine={false} domain={[0, 100]} tickFormatter={(value) => value + '%'} />
+        <Tooltip contentStyle={tooltipStyle} />
+        <Line type="monotone" dataKey="percentage" name="Adherencia" stroke="#f6673b" strokeWidth={2} dot={{ r: 4, fill: '#f6673b' }}/>
+      </LineChart>
     </ResponsiveContainer>
   );
 }
