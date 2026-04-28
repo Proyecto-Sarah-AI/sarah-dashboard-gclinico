@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: clinic_frontend
+    container_name: dashboard-gclinico-frontend
     restart: always
     ports:
       - "3006:5173"
