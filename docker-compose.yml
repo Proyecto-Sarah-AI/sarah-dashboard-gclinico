@@ -8,7 +8,7 @@ services:
     container_name: clinic_frontend
     restart: always
     ports:
-      - "8080:80"
+      - "3006:5173"
     networks:
       - clinic_dashboard
 
