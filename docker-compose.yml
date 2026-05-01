@@ -1,16 +1,17 @@
-version: "3.9"
-
 services:
   gclinico:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: node:20-alpine
     container_name: dashboard-gclinico
-    restart: always
+    working_dir: /app
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: sh -c "npm install && npm run dev -- --host"
     expose:
       - "5173"
     networks:
       - sarah-network
+    restart: unless-stopped
 
 networks:
   sarah-network:
