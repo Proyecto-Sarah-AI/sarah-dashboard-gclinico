@@ -1,17 +1,17 @@
 version: "3.9"
 
 services:
-  gclinico:
+  frontend:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: dashboard-gclinico
+    container_name: dashboard-gclinico-frontend
     restart: always
-    expose:
-      - "5173"
+    ports:
+      - "3006:5173"
     networks:
-      - sarah-network
+      - clinic_dashboard
 
 networks:
-  sarah-network:
+  clinic_dashboard:
     driver: bridge

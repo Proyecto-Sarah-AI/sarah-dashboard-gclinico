@@ -12,11 +12,12 @@ RUN npm run build
 # Etapa 2: servir con Nginx
 FROM nginx:alpine
 
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
 # Copiar build de Vite
 COPY --from=builder /app/dist /usr/share/nginx/html
 
 # (Opcional) Configuración custom de nginx
-# COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 
