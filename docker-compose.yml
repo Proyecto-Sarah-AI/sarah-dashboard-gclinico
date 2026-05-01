@@ -1,6 +1,6 @@
 services:
   gclinico:
-    image: node:20-alpine
+    image: node:20
     container_name: dashboard-gclinico
     working_dir: /app
     volumes:
