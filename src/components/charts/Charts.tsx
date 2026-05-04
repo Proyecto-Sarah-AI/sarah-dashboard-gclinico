@@ -70,10 +70,12 @@ export const dataSets = {
 }
 
 const tooltipStyle = {
-  backgroundColor: '#18181f',
-  border: '1px solid #2a2a35',
+  color: '#f1f6fa',   //foreground claro
+  backgroundColor: '#1f273a', //background oscuro
+  border: "none",
   borderRadius: '8px',
   fontSize: '12px',
+  fontWeight: '500'
 };
 
 export function PharmacologicalAdherenceHistogramChart() {

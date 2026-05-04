@@ -1,5 +1,6 @@
 .kpi-card {
   background: var(--background-secondary);
+  font-weight: var(--font-weight-bold);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 20px;
@@ -21,8 +22,8 @@
 
 .kpi-title {
   font-size: 13px;
-  font-weight: 500;
-  color: var(--foreground-secondary);
+  font-weight: var(--font-weight-semibold);
+  color: var(--foreground);
 }
 
 .kpi-icon {
@@ -61,8 +62,8 @@
 }
 
 .kpi-value {
-  font-size: 28px;
-  font-weight: 600;
+  font-size: 2em;
+  font-weight: var(--font-weight-semibold);
   color: var(--foreground);
   line-height: 1;
 }
@@ -71,16 +72,18 @@
   display: flex;
   align-items: center;
   gap: 4px;
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 0.875em;
+  font-weight: var(--font-weight-bold);
 }
 
 .kpi-change--up {
-  color: var(--success);
+  color: var(--chart-2);
+  font-weight: var(--font-weight-semibold);
 }
 
 .kpi-change--down {
-  color: var(--danger);
+  color: var(--chart-4);
+  font-weight: var(--font-weight-bold);
 }
 
 .kpi-change--neutral {
@@ -88,7 +91,7 @@
 }
 
 .kpi-change-label {
-  color: var(--foreground-muted);
-  font-weight: 400;
+  color: var(--foreground-secondary);
+  font-weight: var(--font-weight-regular);
   margin-left: 4px;
 }

@@ -23,11 +23,11 @@ export function KPICard({
   const getTrendIcon = () => {
     switch (trend) {
       case 'up':
-        return <TrendingUp size={14} />;
+        return <TrendingUp size={30} />;
       case 'down':
-        return <TrendingDown size={14} />;
+        return <TrendingDown size={30} />;
       default:
-        return <Minus size={14} />;
+        return <Minus size={30} />;
     }
   };
 
