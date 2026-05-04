@@ -1,15 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600&display=swap');
+
 :root {
-  /* Background colors */
+  /* Background colors (modificados)*/
+  --background: #ffffff;
+  --background-secondary: #f5f8fd;
+  --background-tertiary: #dfe2e8;
+
+  /* Background colors (originales) 
   --background: #f5f8fd;
   --background-secondary: #dfe2e8;
+  */
   
   /* Border colors */
-  --border: #647287;
+  --border: #f5f8fd;
+  /*--border: #dfe2e8;*/
   
   /* Text colors */
   --foreground: #1f293b;
   --foreground-secondary: #67778c;
   --foreground-muted: #647287; /* No estaba */
+  --foreground-alternative: #ffffff; /*Nuevo*/
   
   /* Accent colors  */
   --primary: #0db17f;
@@ -24,6 +34,10 @@
   
   /* Fonts */
   --font-sans: 'Work Sans', ui-sans-serif, system-ui;
+
+  --font-weight-regular:400;
+  --font-weight-medium:500;
+  --font-weight-semibold:600;
   
   /* Radius */
   --radius: 0.5rem;
@@ -40,13 +54,14 @@
 .dark {
   --background: #1f273a;
   --background-secondary: #1c2436;
+  --background-tertiary: #121a2b;
   
-  --border: #e2e8f0;
-  --border-light: #cbd5e1;
+  --border: #1c2436;
   
   --foreground: #f1f6fa;
   --foreground-secondary: #90a1b2;
   --foreground-muted: #8e9cad;
+  --foreground-alternative: #121a2b; /*Nuevo*/
   
   --primary: #35b498;
   --primary-hover: #12956c;

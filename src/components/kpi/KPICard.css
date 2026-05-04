@@ -1,16 +1,16 @@
 .kpi-card {
-  background: var(--card);
+  background: var(--background-secondary);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  transition: border-color 0.15s ease;
 }
 
 .kpi-card:hover {
-  border-color: var(--border-light);
+  border-color: var(--background-secondary);
+  background: var(--background);
 }
 
 .kpi-header {

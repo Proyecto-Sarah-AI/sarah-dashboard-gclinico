@@ -73,21 +73,26 @@
   align-items: center;
   gap: 12px;
   padding: 10px 12px;
-  color: var(--foreground-secondary);
+  background-color: var(--primary);
   text-decoration: none;
+  border: none;
+  border-color: var(--primary);
   border-radius: var(--radius);
   transition: all 0.15s ease;
-  font-size: 14px;
+  font: var(--font-sans);
+  font-weight: var(--font-weight-medium);
+  font-size: 0.875rem;
+  color: var(--foreground-alternative);
 }
 
 .nav-item:hover {
-  background: var(--card-hover);
-  color: var(--foreground);
+  background: var(--primary-hover);
+  color: var(--background-secondary);
 }
 
 .nav-item.active {
-  background: var(--primary-muted);
-  color: var(--primary);
+  background: var(--background-tertiary);
+  color: var(--foreground);
 }
 
 .nav-badge {
@@ -137,12 +142,13 @@
 }
 
 .user-name {
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 0.875rem;
+  font-weight: var(--font-weight-semibold);
   color: var(--foreground);
 }
 
 .user-role {
-  font-size: 11px;
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-medium);
   color: var(--foreground-muted);
 }
