@@ -76,12 +76,18 @@
   height: fit-content;
   padding: 8px 16px;
   background: var(--primary);
-  color: #fff;
+  color: var(--foreground-alternative);
   border: none;
   border-radius: var(--radius);
+  font: var(--font-sans);
+  font-weight: var(--font-weight-medium);
   font-size: 14px;
   cursor: pointer;
-  transition: background-color 0.15s ease;
+  transition: all 0.15s ease;
+}
+
+.export-button:hover {
+  background: var(--primary-hover);
 }
 
 

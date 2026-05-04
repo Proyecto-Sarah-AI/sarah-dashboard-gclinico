@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 32px;
-  background: var(--background-secondary);
+  background: var(--background);
   border-bottom: 1px solid var(--border);
 }
 
@@ -15,7 +15,7 @@
 
 .header-title {
   font-size: 24px;
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   color: var(--foreground);
   margin: 0;
 }
@@ -76,16 +76,17 @@
   gap: 8px;
   padding: 10px 16px;
   background: var(--background-tertiary);
-  border: 1px solid var(--border);
+  border: none;
   border-radius: var(--radius);
-  color: var(--foreground-secondary);
-  font-size: 14px;
+  color: var(--foreground);
+  font-weight: var(--font-weight-medium);
+  font-size: 0.875rem;
   cursor: pointer;
-  transition: border-color 0.15s ease;
+  transition: all 0.15s ease;
 }
 
 .date-filter:hover {
-  border-color: var(--border-light);
+  background: var(--background-secondary);
 }
 
 .notification-btn {
@@ -125,14 +126,13 @@
   align-items: center;
   justify-content: center;
   background: var(--background-tertiary);
-  border: 1px solid var(--border);
+  border: none;
   border-radius: var(--radius);
-  color: var(--foreground-secondary);
+  color: var(--foreground);
   cursor: pointer;
   transition: all 0.15s ease;
 }
 
 .theme-toggle-btn:hover {
-  border-color: var(--border-light);
-  color: var(--foreground);
+  background: var(--background-secondary);
 }
